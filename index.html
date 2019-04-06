@@ -16,8 +16,21 @@
       <div>git clone 'https://github.com/web-lix/git-vue.git'</div>
     </li>
     <li>
-      <div></div>
-      <div></div>
+      <div>3.把工作区代码提交到暂存区</div>
+      <div>(1) git add .</div>
+      <div>使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件</div>
+      <div>(2) git add -u</div>
+      <div>他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）</div>
+      <div>(3) git add -A</div>
+      <div>是上面两个功能的合集（git add --all的缩写）</div>
+    </li>
+    <li>
+      <div>4. 将暂存区内容添加到本地仓库</div>
+      <div>(1) git commit -m '本次修改备注'</div>
+      <div>-m 参数表示可以直接输入后面的“message”，如果不加 -m参数，那么是不能直接输入message的，而是会调用一个编辑器一般是vim来让你输入这个message，message即是我们用来简要说明这次提交的语句。</div>
+      <div>(2) git commit -am '本次修改备注'</div>
+      <div>-a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区，</div>
+      <div>注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。</div>
     </li>
 
   </ul>
