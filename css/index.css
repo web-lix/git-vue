@@ -4,3 +4,11 @@
 .wrap{
   color: #086ac5;
 }
+.box{
+  padding: 20px;
+  color: #333;
+}
+.box .title{
+  font-size: 20px;
+  color: #c40d35;
+}

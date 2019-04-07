@@ -58,6 +58,17 @@
       <div>10.git init命令把这个目录变成Git可以管理的仓库</div>
     </li>
   </ul>
+  <div class="box">
+    <div class="title">版本回退、丢弃修改</div>
+    <div class="live">1.工作区修改撤销 git checkout -- index.html 让文件回到最后一次 git add 或 git commit 时的状态</div>
+    <div class="live">2.git add 推到了暂存区撤销，git reset HEAD index.html 把暂存区的修改重新放回工作区，然后 git checkout -- index.html。先reset把暂存区的回退，然后checkout丢弃。</div>
+    <div class="live">3.git commit 推到了本地版本库撤销，git reset --hard 版本号 ,强制版本回退并更新本地代码，慎用！！！git reflog 用来记录你的每一次命令 </div>
+    <div class="live"></div>
+    <div class="live"></div>
+    <div class="live"></div>
+    <div class="live"></div>
+    <div class="live"></div>
+  </div>
 </body>
 
 </html>
