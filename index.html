@@ -1,74 +1,111 @@
 <html>
+  <head>
+    <title>git学习笔记</title>
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
 
-<head>
-  <title>git学习笔记</title>
-  <link rel="stylesheet" href="css/index.css" />
-</head>
-
-<body>
-  <ul class="ul wrap">
-    <li>
-      <div>1.配置项目信息</div>
-      <div>git config --global user.name 'web-lix'</div>
-      <div>git config --global user.email '1577588188@qq.com'</div>
-    </li>
-    <li>
-      <div>2.克隆远程仓库</div>
-      <div>git clone 'https://github.com/web-lix/git-vue.git'</div>
-    </li>
-    <li>
-      <div>3.把工作区代码提交到暂存区</div>
-      <div>(1) git add .</div>
-      <div>使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件</div>
-      <div>(2) git add -u</div>
-      <div>他仅监控已经被add的文件（即tracked file），他会将被修改的文件提交到暂存区。add -u 不会提交新文件（untracked file）。（git add --update的缩写）</div>
-      <div>(3) git add -A</div>
-      <div>是上面两个功能的合集（git add --all的缩写）</div>
-    </li>
-    <li>
-      <div>4. 将暂存区内容添加到本地仓库</div>
-      <div>(1) git commit -m '本次修改备注'</div>
-      <div>-m 参数表示可以直接输入后面的“message”，如果不加 -m参数，那么是不能直接输入message的，而是会调用一个编辑器一般是vim来让你输入这个message，message即是我们用来简要说明这次提交的语句。</div>
-      <div>(2) git commit -am '本次修改备注'</div>
-      <div>-a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区，</div>
-      <div>注意: 新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。</div>
-    </li>
-    <li>
-      <div>5.将本地仓库推送到远程</div>
-      <a>git push </a>
-    </li>
-    <li>
-      <div>6.拉取代码</div>
-      <div>git pull</div>
-    </li>
-    <li>
-      <div>7.用于切换分支或恢复工作树文件</div>
-      <div>git checkout index.html</div>
-      <div>让这个文件回到最近一次git commit或git add时的状态</div>
-    </li>
-    <li>
-      <div>8.查看当前创库情况</div>
-      <div>git status</div>
-    </li>
-    <li>
-      <div>9.创建新分支</div>
-      <div>git branch master</div>
-    </li>
-    <li>
-      <div>10.git init命令把这个目录变成Git可以管理的仓库</div>
-    </li>
-  </ul>
-  <div class="box">
-    <div class="title">版本回退、丢弃修改</div>
-    <div class="live">1.工作区修改撤销 git checkout -- index.html 让文件回到最后一次 git add 或 git commit 时的状态</div>
-    <div class="live">2.git add 推到了暂存区撤销，git reset HEAD index.html 把暂存区的修改重新放回工作区，然后 git checkout -- index.html。先reset把暂存区的回退，然后checkout丢弃。</div>
-    <div class="live">3.git commit 推到了本地版本库撤销，git reset --hard 版本号 ,强制版本回退并更新本地代码，慎用！！！git reflog 用来记录你的每一次命令 </div>
-    <div class="live"></div>
-    <div class="live"></div>
-    <div class="live"></div>
-    <div class="live"></div>
-    <div class="live"></div>
-  </div>
-</body>
-
+  <body>
+    <ul class="ul wrap">
+      <li>
+        <div>1.配置项目信息</div>
+        <div>git config --global user.name 'web-lix'</div>
+        <div>git config --global user.email '1577588188@qq.com'</div>
+      </li>
+      <li>
+        <div>2.克隆远程仓库</div>
+        <div>git clone 'https://github.com/web-lix/git-vue.git'</div>
+      </li>
+      <li>
+        <div>3.把工作区代码提交到暂存区</div>
+        <div>(1) git add .</div>
+        <div>
+          使用它会把工作时的所有变化提交到暂存区，包括文件内容修改(modified)以及新文件(new)，但不包括被删除的文件
+        </div>
+        <div>(2) git add -u</div>
+        <div>
+          他仅监控已经被add的文件（即tracked
+          file），他会将被修改的文件提交到暂存区。add -u
+          不会提交新文件（untracked file）。（git add --update的缩写）
+        </div>
+        <div>(3) git add -A</div>
+        <div>是上面两个功能的合集（git add --all的缩写）</div>
+      </li>
+      <li>
+        <div>4. 将暂存区内容添加到本地仓库</div>
+        <div>(1) git commit -m '本次修改备注'</div>
+        <div>
+          -m 参数表示可以直接输入后面的“message”，如果不加
+          -m参数，那么是不能直接输入message的，而是会调用一个编辑器一般是vim来让你输入这个message，message即是我们用来简要说明这次提交的语句。
+        </div>
+        <div>(2) git commit -am '本次修改备注'</div>
+        <div>
+          -a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git
+          add添加到暂存区，
+        </div>
+        <div>
+          注意:
+          新加的文件（即没有被git系统管理的文件）是不能被提交到本地仓库的。
+        </div>
+      </li>
+      <li>
+        <div>5.将本地仓库推送到远程</div>
+        <a>git push </a>
+      </li>
+      <li>
+        <div>6.拉取代码</div>
+        <div>git pull</div>
+      </li>
+      <li>
+        <div>7.用于切换分支或恢复工作树文件</div>
+        <div>git checkout index.html</div>
+        <div>让这个文件回到最近一次git commit或git add时的状态</div>
+      </li>
+      <li>
+        <div>8.查看当前创库情况</div>
+        <div>git status</div>
+      </li>
+      <li>
+        <div>9.创建新分支</div>
+        <div>git branch master</div>
+      </li>
+      <li>
+        <div>10.git init命令把这个目录变成Git可以管理的仓库</div>
+      </li>
+    </ul>
+    <div class="box">
+      <div class="title">版本回退、丢弃修改</div>
+      <div class="live">
+        1.工作区修改撤销 git checkout -- index.html 让文件回到最后一次 git add
+        或 git commit 时的状态
+      </div>
+      <div class="live">
+        2.git add 推到了暂存区撤销，git reset HEAD index.html
+        把暂存区的修改重新放回工作区，然后 git checkout --
+        index.html。先reset把暂存区的回退，然后checkout丢弃。
+      </div>
+      <div class="live">
+        3.git commit 推到了本地版本库撤销，git reset --hard 版本号
+        ,强制版本回退并更新本地代码，慎用！！！git reflog 用来记录你的每一次命令
+      </div>
+      <div class="live"></div>
+      <div class="live"></div>
+      <div class="live"></div>
+      <div class="live"></div>
+      <div class="live"></div>
+    </div>
+  </body>
 </html>
+<script>
+  var a = {v:1,c:2}
+  var as = 221;
+  var as = 221;
+  var as = 221;
+  var as = 221;
+  function as(){
+    console.log(2)
+    console.log(2)
+    console.log(2)
+    console.log(2)
+    console.log(2)
+  }
+</script>
